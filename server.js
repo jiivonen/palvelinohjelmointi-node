@@ -22,7 +22,11 @@ const host = 'localhost';
 
 // Määritellään polut
 app.get('/', (req, res) => {
-    const name = req.query.name;
+    let name = req.query.name;
+    console.log(name);
+    if (!name) {
+        name = 'vierailija';
+    } 
     res.render('index', { nimi: name });
 });
 app.get('/kissat', (req, res) => {
