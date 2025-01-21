@@ -25,20 +25,10 @@ app.get('/', (req, res) => {
     const name = req.query.name;
     res.render('index', { nimi: name });
 });
-// http://localhost:3000/kissat?min_age=0&sort=age
 app.get('/kissat', (req, res) => {
-    const minAge = req.query.min_age; // "0"
-    const sort = req.query.sort;
-    console.log(`Ikä ${minAge} ja järjestys ${sort}`);
-    res.sendFile(path.join(__dirname, 'templates/kissat.html'));
+    res.render('kissat');
 });
 
-// http://localhost:3000/kissat/3
-app.get('/kissat/:id', (req, res) => {
-    const identifier = req.params.id;
-    console.log(`Id: ${identifier}`);
-    res.sendFile(path.join(__dirname, 'templates/kissat.html'));
-});
 
 // Määritellään virhesivu
 app.use((req, res) => {
