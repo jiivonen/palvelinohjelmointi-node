@@ -9,5 +9,12 @@
 <body>
     <h1>Hello World!</h1>
     <p>Terve, <%= nimi %></p>
+    <% if (showForm) { %>
+        <form>
+            Mikä on nimesi?
+            <input type="text" name="name">
+            <button type="submit">Lähetä</button>
+        </form>
+    <% } %>
 </body>
 </html>
